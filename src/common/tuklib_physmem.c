@@ -16,8 +16,10 @@
 // information available via sysconf(), but on Cygwin 1.5 and older it
 // gives wrong results (from our point of view).
 #if defined(_WIN32) || defined(__CYGWIN__)
+#	ifndef _MSC_VER
 #	ifndef _WIN32_WINNT
 #		define _WIN32_WINNT 0x0500
+#	endif
 #	endif
 #	include <windows.h>
 
